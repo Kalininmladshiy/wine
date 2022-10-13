@@ -3,7 +3,7 @@ import datetime
 import collections
 
 
-def noun_form(num):
+def get_noun_form(num):
     last_digit = num % 10
     last_two_digit = num % 100
     if last_two_digit == 11 or last_two_digit == 12 or last_two_digit == 13 or last_two_digit == 14:
