@@ -1,6 +1,7 @@
 /.idea
 *.sqlite3
 *.env
+index.html
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
