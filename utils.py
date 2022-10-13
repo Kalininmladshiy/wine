@@ -18,8 +18,7 @@ def noun_form(num):
 
 def get_age(year=1920, month=1, day=1, hour=0):
     winery_founding_date = datetime.datetime(year=1920, month=1, day=1, hour=0)
-    current_time = datetime.datetime.now()
-    time_delta = current_time - winery_founding_date
+    time_delta = datetime.datetime.now() - winery_founding_date
     winery_age=int(time_delta.days/365)
     return winery_age
 
