@@ -1,6 +1,6 @@
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-from utils import noun_form, get_years, get_drinks_data
+from utils import noun_form, get_age, get_drinks
 
 
 if __name__ == '__main__':
@@ -11,11 +11,11 @@ if __name__ == '__main__':
     
     template = env.get_template('template.html')
     
-    winery_age=get_years()
-    drinks_data = get_drinks_data()
+    winery_age=get_age()
+    drinks_by_category = get_drinks()
     rendered_page = template.render(
         winery_age=winery_age,
-        drinks_data=drinks_data,
+        drinks_by_category=drinks_by_category,
         noun_form=noun_form(winery_age),
     )
     

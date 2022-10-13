@@ -23,14 +23,15 @@ def get_age(year=1920, month=1, day=1, hour=0):
     return winery_age
 
 
-def get_drinks_data(filename='wine.xlsx', sheet_name='Лист1'):
-    wine_data = pandas.read_excel(filename,
-                                  sheet_name=sheet_name,
-                                  na_values='N/A',
-                                  keep_default_na=False,
-                                   )
-    drinks = wine_data.to_dict(orient='records')
-    drinks_data = collections.defaultdict(list)
+def get_drinks(filename='wine.xlsx', sheet_name='Лист1'):
+    wine = pandas.read_excel(
+        filename,
+        sheet_name=sheet_name,
+        na_values='N/A',
+        keep_default_na=False,
+     )
+    drinks = wine.to_dict(orient='records')
+    drinks_by_category = collections.defaultdict(list)
     for drink in drinks:
-        drinks_data[drink['Категория']].append(drink)
-    return drinks_data
+        drinks_by_category[drink['Категория']].append(drink)
+    return drinks_by_category
