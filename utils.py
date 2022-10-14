@@ -23,7 +23,7 @@ def get_age(year=1920, month=1, day=1, hour=0):
     return winery_age
 
 
-def get_drinks_by_category(filename='wine.xlsx', sheet_name='Лист1'):
+def get_drinks_by_category(path_to_file, sheet_name='Лист1'):
     wine = pandas.read_excel(
         filename,
         sheet_name=sheet_name,
