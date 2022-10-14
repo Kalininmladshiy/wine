@@ -25,7 +25,7 @@ def get_age(year=1920, month=1, day=1, hour=0):
 
 def get_drinks_by_category(path_to_file, sheet_name='Лист1'):
     wine = pandas.read_excel(
-        filename,
+        path_to_file,
         sheet_name=sheet_name,
         na_values='N/A',
         keep_default_na=False,
