@@ -16,10 +16,8 @@ def get_noun_form(num):
         return 'лет'
     
 
-def get_age(year=1920, month=1, day=1, hour=0):
-    winery_founding_date = datetime.datetime(year=1920, month=1, day=1, hour=0)
-    time_delta = datetime.datetime.now() - winery_founding_date
-    winery_age=int(time_delta.days/365)
+def get_age(year=1920):
+    winery_age = datetime.datetime.now().year - year
     return winery_age
 
 
